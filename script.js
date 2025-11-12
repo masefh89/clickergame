@@ -17,14 +17,14 @@ function updateGemDisplay() {
 // Check and enable/disable upgrades based on current gems
 function checkUpgrades() {
     // First upgrade (500 gems for double click)
-    if (gems >= 500 && !firstUpgrade.classList.contains("purchased")) {
+    if (gems >= 5 && !firstUpgrade.classList.contains("purchased")) {
         firstUpgrade.removeAttribute("disabled");
     } else {
         firstUpgrade.setAttribute("disabled", "true");
     }
     
     // Second upgrade (1000 gems for auto-click)
-    if (gems >= 1000&& !secondUpgrade.classList.contains("purchased")) {
+    if (gems >= 10&& !secondUpgrade.classList.contains("purchased")) {
         secondUpgrade.removeAttribute("disabled");
     } else {
         secondUpgrade.setAttribute("disabled", "true");
@@ -58,8 +58,8 @@ gem.addEventListener("click", (event) => {
 
 // First upgrade handler (double gems per click)
 firstUpgrade.addEventListener("click", () => {
-    if (gems >= 500 && !firstUpgrade.classList.contains("purchased")) {
-        gems -= 500;
+    if (gems >= 5 && !firstUpgrade.classList.contains("purchased")) {
+        gems -= 5;
         gemsPerClick = 2;
         firstUpgrade.classList.add("purchased");
         firstUpgrade.setAttribute("disabled", "true");
@@ -71,8 +71,8 @@ firstUpgrade.addEventListener("click", () => {
 
 // Second upgrade handler (auto-click)
 secondUpgrade.addEventListener("click", () => {
-    if (gems >= 1000&& !secondUpgrade.classList.contains("purchased")) {
-        gems -= 1000;
+    if (gems >= 10&& !secondUpgrade.classList.contains("purchased")) {
+        gems -= 10;
         secondUpgrade.classList.add("purchased");
         secondUpgrade.setAttribute("disabled", "true");
         secondUpgrade.textContent = "Purchased!";
